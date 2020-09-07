@@ -44,11 +44,11 @@ public class ActionClassTest extends TestBase {
     }
 
     @Test
-    public void asagiYukari(){
+    public void asagiYukari() {
 
-       driver.get("http://amazon.com");
-       Actions actions = new Actions(driver);
-       actions.sendKeys(Keys.PAGE_DOWN).perform();
+        driver.get("http://amazon.com");
+        Actions actions = new Actions(driver);
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
 
         try {
             Thread.sleep(2000);
@@ -65,10 +65,29 @@ public class ActionClassTest extends TestBase {
 
         actions.sendKeys(Keys.PAGE_UP).perform();
 
+    }
+    @Test
+    public void  buyukKucukYazma () {
+        driver.get("http://google.com");
+
+        driver.findElement(By.name("q")).sendKeys(Keys.SHIFT + "hello live channell");
+    }
+    @Test
+    public void dragAndDrop(){
+        driver.get("http://google.com");
+        WebElement logo = driver.findElement(By.id("hplogo"));
+        WebElement aramaKutusu = driver.findElement(By.id("q"));
+
+       Actions  actions = new Actions(driver);
+       actions.dragAndDrop(logo,aramaKutusu).perform();
+
+    }
+
+
 
 
     }
 
 
 
-}
+
